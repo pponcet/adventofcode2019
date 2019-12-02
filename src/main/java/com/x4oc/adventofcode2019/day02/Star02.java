@@ -31,6 +31,10 @@ public class Star01 {
     }
 
     public static int calculateFuelRequirement(int mass){
-        return (mass / 3) - 2;
+        int result = (mass / 3) - 2;
+        if(result > 8){
+            result += calculateFuelRequirement(result);
+        }
+        return result;
     }
 }
